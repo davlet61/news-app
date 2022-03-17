@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import NewsList from './components/NewsList/NewsList';
 import Home from './components/pages/Home';
 import Latest from './components/pages/Latest';
+import Search from './components/pages/Search';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/latest" element={<Latest />} />
-          <Route path="/search" element={<NewsList />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
       </BrowserRouter>
     </>

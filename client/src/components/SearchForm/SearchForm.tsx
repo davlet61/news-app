@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { v4 } from 'uuid';
 import {
   HandleChangeFn,
@@ -12,6 +13,7 @@ const SearchForm = ({ addNews }: { addNews: AddNewsFn }) => {
   const RECENT_SEARCH = 'recent.search';
   const [keyword, setKeyword] = useState<string>('');
   const [recentSearch, setRecentSearch] = useState<string[]>([]);
+  const navigate = useNavigate();
 
   const handleChange: HandleChangeFn = e => {
     setKeyword(e.target.value);
@@ -42,6 +44,7 @@ const SearchForm = ({ addNews }: { addNews: AddNewsFn }) => {
       });
     }
     fetchNews(keyword);
+    navigate('/search');
     setKeyword('');
   };
 
@@ -61,7 +64,7 @@ const SearchForm = ({ addNews }: { addNews: AddNewsFn }) => {
           <option key={v4()}>{item}</option>
         ))}
       </datalist>
-      <button type="submit" className="btn form__btn">
+      <button type="submit" className="form__btn">
         <i className="fa-solid fa-magnifying-glass" />
       </button>
     </form>
