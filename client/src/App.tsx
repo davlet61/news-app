@@ -1,10 +1,12 @@
 import './App.css';
-import SearchForm from './components/SearchForm/SearchForm';
+import HeroSection from './components/HeroSection/HeroSection';
+import NewsList from './components/NewsList/NewsList';
 
 function App() {
   return (
     <>
-      <SearchForm />
+      <HeroSection />
+      <NewsList />
     </>
   );
 }
