@@ -4,12 +4,13 @@ const request = require('supertest');
 const app = require('./app');
 
 describe('API Functionality', () => {
-  test('should get home route', done => {
-    request(app)
-      .get('/api/news')
-      .expect(response => {
-        assert.strictEqual(response.body, 'Hi Mom!');
-      })
-      .expect(200, done);
+  const getThisAsJson = async url => request(app).get(url).set('Accept', 'application/json');
+
+  test('should get home route', async () => {
+    const response = await getThisAsJson('/api/news');
+    assert.strictEqual(response.body[0].status, 'ok');
+    assert.strictEqual(response.status, 200);
+
+    expect(response.body[0]).toHaveProperty('articles');
   });
 });

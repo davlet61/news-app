@@ -4,13 +4,16 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon .",
-    "test": "jest --detectOpenHandles"
+    "start": "NODE_ENV=production nodemon .",
+    "dev": "NODE_ENV=development nodemon .",
+    "dev-test": "NODE_ENV=development jest --detectOpenHandles",
+    "test": "NODE_ENV=test jest --detectOpenHandles"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.26.1",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "jest": "^27.5.1",
