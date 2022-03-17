@@ -6,6 +6,7 @@ import {
   AddNewsFn,
   News,
 } from '../../Types/Types';
+import './SearchForm.css';
 
 const SearchForm = ({ addNews }: { addNews: AddNewsFn }) => {
   const RECENT_SEARCH = 'recent.search';
@@ -45,34 +46,25 @@ const SearchForm = ({ addNews }: { addNews: AddNewsFn }) => {
   };
 
   return (
-    <div>
-      <form className="form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="text"
-          value={keyword}
-          onChange={handleChange}
-          placeholder="Search..."
-          list="recent"
-        />
-        <datalist id="recent">
-          {recentSearch.map(item => (
-            <option key={v4()}>{item}</option>
-          ))}
-        </datalist>
-        <button type="submit" className="btn">
-          Search
-        </button>
-      </form>
-      {/* {githubContext.users.length > 0 && (
-        <button
-          className='btn btn-light btn-block'
-          onClick={githubContext.clearUsers}
-        >
-          Clear
-        </button>
-      )} */}
-    </div>
+    <form className="form" onSubmit={handleSubmit}>
+      <input
+        className="form__input"
+        type="text"
+        name="text"
+        value={keyword}
+        onChange={handleChange}
+        placeholder="Search..."
+        list="recent"
+      />
+      <datalist id="recent" className="form__datalist">
+        {recentSearch.map(item => (
+          <option key={v4()}>{item}</option>
+        ))}
+      </datalist>
+      <button type="submit" className="btn form__btn">
+        <i className="fa-solid fa-magnifying-glass" />
+      </button>
+    </form>
   );
 };
 

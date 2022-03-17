@@ -1,14 +1,20 @@
 import { Article } from '../../Types/Types';
-import ArticleContent from '../ArticleContent/ArticleContent';
+import './ArticleCard.css';
 
 const ArticleCard = ({ article }: { article: Article }) => {
   return (
-    <article>
-      <figure>
-        <img src={article.urlToImage} alt={article.source.name} />
-        <figcaption>{article.title}</figcaption>
+    <article className="article">
+      <figure className="card">
+        <img
+          className="card__image"
+          src={article.urlToImage}
+          alt={article.source.name}
+        />
+        <figcaption className="card__caption">
+          <h3>{article.title}</h3>
+          <p>{article.description}</p>
+        </figcaption>
       </figure>
-      <ArticleContent content={article.content} />
     </article>
   );
 };

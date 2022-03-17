@@ -1,0 +1,30 @@
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  min-height: 80vh;
+}
+
+.form__input {
+  height: 2rem;
+  width: 25rem;
+  position: relative;
+  border: 1px solid black;
+}
+
+.form__btn {
+  margin-left: 23.4rem;
+  position: absolute;
+  padding: 0.59rem;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  z-index: 1;
+}
+
+.form__btn:hover {
+  background-color: whitesmoke;
+  border: 1px solid black;
+  color: black;
+}

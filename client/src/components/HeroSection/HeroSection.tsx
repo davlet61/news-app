@@ -4,29 +4,17 @@ import video from '../../assets/hero.mp4';
 
 const HeroSection = () => {
   return (
-    <div className="hero-container">
+    <header className="hero">
       <video src={video} autoPlay loop muted />
-      <h1>KEEP YOURSELF UPDATED</h1>
-      <p>Start searching for news on a desired topic</p>
-      <div className="hero-btns">
-        <Button
-          type="btns"
-          buttonStyle="btn--outline"
-          buttonSize="btn--large"
-          onClick={console.log('hey')}
-        >
-          GET STARTED
-        </Button>
-        <Button
-          type="btns"
-          buttonStyle="btn--primary"
-          buttonSize="btn--large"
-          onClick={console.log('hey')}
-        >
-          LATEST NEWS <i className="far fa-play-circle" />
+      <h1 className="hero__title">KEEP YOURSELF UPDATED</h1>
+      <p className="hero__text">Start searching for news on a desired topic</p>
+      <div className="hero__btns">
+        <Button link="/search">GET STARTED</Button>
+        <Button link="/latest" reverse={true}>
+          LATEST NEWS <i className="fa-solid fa-rss" />
         </Button>
       </div>
-    </div>
+    </header>
   );
 };
 export default HeroSection;

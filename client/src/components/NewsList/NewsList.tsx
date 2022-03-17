@@ -1,14 +1,10 @@
 import { useState } from 'react';
-import { News, AddNewsFn } from '../../Types/Types';
-import Articles from '../Article/Articles';
+import { News, AddNewsFn, initialNews } from '../../Types/Types';
+import Articles from '../Articles/Articles';
 import SearchForm from '../SearchForm/SearchForm';
 
 const NewsList = () => {
-  let [news, setNews] = useState<News>({
-    status: 'ok',
-    totalResults: 0,
-    articles: [],
-  });
+  let [news, setNews] = useState<News>(initialNews);
 
   const addNews: AddNewsFn = data => {
     setNews(data);

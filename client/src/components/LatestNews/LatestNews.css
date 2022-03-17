@@ -1,0 +1,19 @@
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.article:first-child {
+  flex: 1 0 100%;
+  max-width: 90%;
+  margin: auto;
+}
+
+.article {
+  flex: 1 0 50%;
+}
+
+body {
+  background-color: antiquewhite;
+}

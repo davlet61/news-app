@@ -1,5 +1,11 @@
 import { FormEvent, Dispatch, SetStateAction, ChangeEvent } from 'react';
 
+export const initialNews = {
+  status: 'ok',
+  totalResults: 0,
+  articles: [],
+};
+
 export interface Source {
   id: null;
   name: string;

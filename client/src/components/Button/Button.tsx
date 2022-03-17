@@ -1,38 +1,25 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import './Button.css';
 import { Link } from 'react-router-dom';
 
-const STYLES = ['btn--primary', 'btn--outline', 'btn--test'];
-
-const SIZES = ['btn--medium', 'btn--large'];
-
 export const Button = ({
-  // @ts-ignore
   children,
-  // @ts-ignore
-  type,
-  // @ts-ignore
-  onClick,
-  // @ts-ignore
-  buttonStyle,
-  // @ts-ignore
-  buttonSize,
+  link,
+  reverse = false,
+}: {
+  children: ReactNode;
+  link: string;
+  reverse?: boolean;
 }) => {
-  const checkButtonStyle = STYLES.includes(buttonStyle)
-    ? buttonStyle
-    : STYLES[0];
-
-  const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
-
   return (
-    // <Link to="/sign-up" className="btn-mobile">
-    <button
-      className={`btn ${checkButtonStyle} ${checkButtonSize}`}
-      onClick={onClick}
-      type={type}
-    >
-      {children}
-    </button>
-    // </Link>
+    <Link to={link} className="btn-mobile">
+      <button
+        className={`btn btn--large ${
+          reverse ? 'btn--outline' : 'btn--primary'
+        }`}
+      >
+        {children}
+      </button>{' '}
+    </Link>
   );
 };

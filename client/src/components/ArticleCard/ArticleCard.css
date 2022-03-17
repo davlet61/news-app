@@ -1,0 +1,27 @@
+.article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 40rem;
+}
+
+.card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.202);
+  border: 1px solid #dddddd;
+  border-radius: 0.15rem;
+  background-color: whitesmoke;
+}
+
+.card__image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card__caption {
+  padding: 1.2rem;
+}
+
+.card__caption > p {
+  text-align: justify;
+}
