@@ -9,9 +9,9 @@ const LatestNews = () => {
 
   const fetchNews = async () => {
     try {
-      const data = await fetch('http://localhost:3001/api/news?search=');
-      const fetchedNews: News[] = await data.json();
-      setLatest(fetchedNews[0]);
+      const data = await fetch('http://localhost:3001/api/news/latest');
+      const fetchedNews: News = await data.json();
+      setLatest(fetchedNews);
     } catch (error: any) {
       return error.message;
     }

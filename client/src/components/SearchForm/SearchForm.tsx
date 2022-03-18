@@ -1,19 +1,12 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { v4 } from 'uuid';
-import {
-  HandleChangeFn,
-  HandleSubmitFn,
-  AddNewsFn,
-  News,
-} from '../../Types/Types';
+import { HandleChangeFn, HandleSubmitFn, AddNewsFn } from '../../Types/Types';
 import './SearchForm.css';
 
 const SearchForm = ({ addNews }: { addNews: AddNewsFn }) => {
   const RECENT_SEARCH = 'recent.search';
   const [keyword, setKeyword] = useState<string>('');
   const [recentSearch, setRecentSearch] = useState<string[]>([]);
-  const navigate = useNavigate();
 
   const handleChange: HandleChangeFn = e => {
     setKeyword(e.target.value);
@@ -28,8 +21,9 @@ const SearchForm = ({ addNews }: { addNews: AddNewsFn }) => {
       const data = await fetch(
         `http://localhost:3001/api/news?search=${input}`,
       );
-      const fetchedNews: News[] = await data.json();
-      addNews(fetchedNews[0]);
+      const fetchedNews = await data.json();
+
+      addNews(fetchedNews);
     } catch (error: any) {
       return error.message;
     }
@@ -44,7 +38,6 @@ const SearchForm = ({ addNews }: { addNews: AddNewsFn }) => {
       });
     }
     fetchNews(keyword);
-    navigate('/search');
     setKeyword('');
   };
 
