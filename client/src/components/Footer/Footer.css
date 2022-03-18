@@ -1,0 +1,31 @@
+span {
+  font-size: 1.2rem;
+}
+
+#ticker {
+  overflow-y: hidden;
+}
+
+.footer {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: rgb(24, 24, 24);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__copyright {
+  align-self: flex-start;
+  color: gainsboro;
+  font-size: 0.8rem;
+}
+
+.footer__date {
+  align-self: flex-end;
+  color: gainsboro;
+  font-size: 0.8rem;
+}

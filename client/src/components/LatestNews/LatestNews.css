@@ -1,0 +1,25 @@
+.section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 2rem;
+}
+
+/* .article:first-child {
+  margin-right: 5rem;
+  margin-bottom: 2rem;
+  max-width: 50%;
+}
+
+.article:nth-child(2) {
+  margin-bottom: 2rem;
+}
+
+.article:not(:first-child) {
+  flex: 1 0 50%;
+} */
+
+body {
+  background-color: antiquewhite;
+}
