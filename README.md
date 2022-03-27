@@ -1,6 +1,6 @@
 # news-app
 
-This app lets a user to search for news on a desired topic.
+This app lets users to search for news on a desired topic.
 
 Each news article has a text-to-speech functionality.
 
